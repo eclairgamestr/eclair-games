@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eclair Games | Oyunun En Tatlı Hali</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        eclair: {
+                            dark: '#0f172a', // Koyu Lacivert Arka Plan
+                            accent: '#8b5cf6', // Neon Mor
+                            highlight: '#38bdf8', // Elektrik Mavisi
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Orbitron', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Neon Glow Efektleri */
+        .glow-text {
+            text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-eclair-dark text-white font-body antialiased selection:bg-eclair-accent selection:text-white">
+
+    <nav class="fixed w-full z-50 bg-eclair-dark/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <span class="font-heading text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-eclair-highlight to-eclair-accent">
+                        ECLAIR GAMES
+                    </span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="hover:text-eclair-highlight transition-colors px-3 py-2 rounded-md text-sm font-medium">Ana Sayfa</a>
+                        <a href="#about" class="hover:text-eclair-highlight transition-colors px-3 py-2 rounded-md text-sm font-medium">Hakkımızda</a>
+                        <a href="#team" class="hover:text-eclair-highlight transition-colors px-3 py-2 rounded-md text-sm font-medium">Ekip</a>
+                        <a href="#contact" class="bg-eclair-accent hover:bg-violet-700 transition-colors px-4 py-2 rounded-full text-sm font-medium">İletişim</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-eclair-dark"></div>
+        
+        <div class="relative z-10 text-center px-4">
+            <h1 class="font-heading text-5xl md:text-7xl font-bold mb-6 glow-text tracking-wider">
+                OYUNUN <span class="text-eclair-highlight">EN TATLI</span> HALİ
+            </h1>
+            <p class="mt-4 text-xl text-gray-300 max-w-2xl mx-auto mb-10">
+                Eclair Games, rekabeti eğlenceyle harmanlayan, sınırları zorlayan ve her zaman pozitif kalan oyuncuların yeni evi.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="#team" class="bg-eclair-highlight text-eclair-dark font-bold py-3 px-8 rounded-full hover:bg-sky-400 transition-all transform hover:scale-105">
+                    Ekibi Tanı
+                </a>
+                <a href="#contact" class="border border-eclair-accent text-eclair-accent font-bold py-3 px-8 rounded-full hover:bg-eclair-accent hover:text-white transition-all">
+                    Bize Katıl
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold mb-8 text-eclair-accent">BİZ KİMİZ?</h2>
+            <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 shadow-xl">
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    Eclair Games, sadece oyun oynayan bir grup değil, aynı zamanda dijital dünyada iz bırakan bir içerik üreticisi topluluğudur. 
+                    <span class="text-eclair-highlight font-bold">V-Squad</span> ruhunu taşıyan ekibimiz; stratejiden aksiyona, simülasyondan korku oyunlarına kadar geniş bir yelpazede yayınlar yapar. 
+                    Amacımız, izleyicilerimize kaliteli vakit geçirtmek ve oyun dünyasındaki yenilikleri en pozitif enerjiyle sunmaktır.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-4">THE SQUAD</h2>
+                <div class="h-1 w-20 bg-eclair-highlight mx-auto rounded-full"></div>
+            </div>
+            
+            <div id="team-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-gray-900 border-t border-gray-800">
+        <div class="max-w-3xl mx-auto px-4 text-center">
+            <h2 class="font-heading text-3xl font-bold mb-8">İLETİŞİM</h2>
+            <p class="text-gray-400 mb-8">Marka işbirlikleri, sponsorluk ve topluluk etkinlikleri için bize ulaşın.</p>
+            
+            <a href="mailto:contact@eclairgames.com" class="inline-flex items-center justify-center space-x-3 text-2xl font-bold text-eclair-highlight hover:text-white transition-colors mb-12">
+                <i class="fa-solid fa-envelope"></i>
+                <span>contact@eclairgames.com</span>
+            </a>
+
+            <div class="flex justify-center space-x-8 text-3xl">
+                <a href="#" class="text-gray-500 hover:text-[#5865F2] transition-colors"><i class="fa-brands fa-discord"></i></a>
+                <a href="#" class="text-gray-500 hover:text-[#9146FF] transition-colors"><i class="fa-brands fa-twitch"></i></a>
+                <a href="#" class="text-gray-500 hover:text-[#FF0000] transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="text-gray-500 hover:text-[#E1306C] transition-colors"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black py-6 text-center text-gray-600 text-sm">
+        <p>&copy; 2026 Eclair Games. Tüm Hakları Saklıdır.</p>
+    </footer>
+
+    <script>
+        // YENİ ÜYE EKLEMEK İÇİN SADECE BU LİSTEYE EKLEME YAPMAN YETERLİ
+        const teamMembers = [
+            {
+                name: "TheGameLih",
+                role: "Topluluk Lideri",
+                desc: "Rekabetçi ruhu ve liderlik vasıflarıyla takımın dinamosu.",
+                color: "text-red-400", // İsim Rengi
+                image: "https://placehold.co/400x400/1a1a1a/FFF?text=TG", // Profil Fotoğrafı Linki
+                socials: { twitter: "#", twitch: "#", youtube: "#" }
+            },
+            {
+                name: "Vasquara",
+                role: "Strateji & İçerik",
+                desc: "Oyun dünyasını analiz eden, strateji ustası ve yaratıcı zeka.",
+                color: "text-purple-400",
+                image: "https://placehold.co/400x400/1a1a1a/FFF?text=VQ",
+                socials: { twitter: "#", twitch: "#", youtube: "#" }
+            },
+            {
+                name: "LordStark",
+                role: "RPG Uzmanı",
+                desc: "Derin hikayelerin ve epik maceraların vazgeçilmez ismi.",
+                color: "text-blue-400",
+                image: "https://placehold.co/400x400/1a1a1a/FFF?text=LS",
+                socials: { twitter: "#", twitch: "#", youtube: "#" }
+            },
+            {
+                name: "ZelenaGreen",
+                role: "FPS Kraliçesi",
+                desc: "Refleksleri ve hızıyla rakiplerine korku salan keskin nişancı.",
+                color: "text-green-400",
+                image: "https://placehold.co/400x400/1a1a1a/FFF?text=ZG",
+                socials: { twitter: "#", twitch: "#", youtube: "#" }
+            }
+        ];
+
+        // HTML oluşturucu fonksiyon
+        const teamGrid = document.getElementById('team-grid');
+        
+        teamMembers.forEach(member => {
+            const card = document.createElement('div');
+            card.className = 'bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover transition-all duration-300 flex flex-col h-full';
+            
+            card.innerHTML = `
+                <div class="h-48 bg-gray-700 overflow-hidden relative group">
+                    <img src="${member.image}" alt="${member.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="text-white font-heading font-bold">Takip Et</span>
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col">
+                    <h3 class="font-heading text-xl font-bold ${member.color} mb-1">${member.name}</h3>
+                    <span class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">${member.role}</span>
+                    <p class="text-gray-400 text-sm mb-6 flex-1">${member.desc}</p>
+                    
+                    <div class="flex space-x-4 mt-auto pt-4 border-t border-gray-700">
+                        <a href="${member.socials.twitch}" class="text-gray-400 hover:text-[#9146FF] transition-colors"><i class="fa-brands fa-twitch"></i></a>
+                        <a href="${member.socials.twitter}" class="text-gray-400 hover:text-[#1DA1F2] transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="${member.socials.youtube}" class="text-gray-400 hover:text-[#FF0000] transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            `;
+            teamGrid.appendChild(card);
+        });
+    </script>
+</body>
+</html>
