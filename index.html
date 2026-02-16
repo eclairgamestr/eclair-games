@@ -1,4 +1,4 @@
-lair<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="tr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -88,7 +88,7 @@ lair<!DOCTYPE html>
             <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 shadow-xl">
                 <p class="text-lg text-gray-300 leading-relaxed">
                     Eclair Games, sadece oyun oynayan bir grup değil, aynı zamanda dijital dünyada iz bırakan bir içerik üreticisi topluluğudur. 
-                    <span class="text-eclair-highlight font-bold">V-Squad</span> ruhunu taşıyan ekibimiz; stratejiden aksiyona, simülasyondan korku oyunlarına kadar geniş bir yelpazede yayınlar yapar. 
+                    <span class="text-eclair-highlight font-bold">Eclair-Squad</span> ruhunu taşıyan ekibimiz; stratejiden aksiyona, simülasyondan korku oyunlarına kadar geniş bir yelpazede yayınlar yapar. 
                     Amacımız, izleyicilerimize kaliteli vakit geçirtmek ve oyun dünyasındaki yenilikleri en pozitif enerjiyle sunmaktır.
                 </p>
             </div>
@@ -114,12 +114,11 @@ lair<!DOCTYPE html>
             
             <a href="mailto:contact@eclairgames.com" class="inline-flex items-center justify-center space-x-3 text-2xl font-bold text-eclair-highlight hover:text-white transition-colors mb-12">
                 <i class="fa-solid fa-envelope"></i>
-                <span>eclairgamestr@gmail.com</span>
+                <span>ceclairgamestr@gmail.com</span>
             </a>
 
             <div class="flex justify-center space-x-8 text-3xl">
-                <a href="#" class="text-gray-500 hover:text-[#5865F2] transition-colors"><i class="fa-brands fa-discord"></i></a>
-                <a href="#" class="text-gray-500 hover:text-[#9146FF] transition-colors"><i class="fa-brands fa-twitch"></i></a>
+                <a href="#" class="text-gray-500 hover:text-[#53FC18] transition-colors"><i class="fa-solid fa-k"></i></a> <a href="#" class="text-gray-500 hover:text-[#9146FF] transition-colors"><i class="fa-brands fa-twitch"></i></a>
                 <a href="#" class="text-gray-500 hover:text-[#FF0000] transition-colors"><i class="fa-brands fa-youtube"></i></a>
                 <a href="https://www.instagram.com/eclairgamestr/" class="text-gray-500 hover:text-[#E1306C] transition-colors"><i class="fa-brands fa-instagram"></i></a>
             </div>
@@ -132,14 +131,15 @@ lair<!DOCTYPE html>
 
     <script>
         // YENİ ÜYE EKLEMEK İÇİN SADECE BU LİSTEYE EKLEME YAPMAN YETERLİ
+        // Linkler kısmına (#) yerine kendi profil linklerinizi yapıştırın.
         const teamMembers = [
             {
                 name: "TheGameLih",
                 role: "Topluluk Lideri",
                 desc: "Rekabetçi ruhu ve liderlik vasıflarıyla takımın dinamosu.",
                 color: "text-red-400", // İsim Rengi
-                image: "https://placehold.co/400x400/1a1a1a/FFF?text=TG", // Profil Fotoğrafı Linki
-                socials: { twitter: "#", twitch: "#", youtube: "#" }
+                image: "https://placehold.co/400x400/1a1a1a/FFF?text=TG", 
+                socials: { twitter: "#", kick: "#", twitch: "#", youtube: "#", instagram: "#" }
             },
             {
                 name: "Vasquara",
@@ -147,7 +147,7 @@ lair<!DOCTYPE html>
                 desc: "Oyun dünyasını analiz eden, strateji ustası ve yaratıcı zeka.",
                 color: "text-purple-400",
                 image: "https://placehold.co/400x400/1a1a1a/FFF?text=VQ",
-                socials: { twitter: "#", twitch: "#", youtube: "#" }
+                socials: { twitter: "#", kick: "#", twitch: "#", youtube: "#", instagram: "#" }
             },
             {
                 name: "LordStark",
@@ -155,47 +155,11 @@ lair<!DOCTYPE html>
                 desc: "Derin hikayelerin ve epik maceraların vazgeçilmez ismi.",
                 color: "text-blue-400",
                 image: "https://placehold.co/400x400/1a1a1a/FFF?text=LS",
-                socials: { twitter: "#", twitch: "#", youtube: "#" }
+                socials: { twitter: "#", kick: "#", twitch: "#", youtube: "#", instagram: "#" }
             },
             {
                 name: "ZelenaGreen",
                 role: "FPS Kraliçesi",
                 desc: "Refleksleri ve hızıyla rakiplerine korku salan keskin nişancı.",
                 color: "text-green-400",
-                image: "https://placehold.co/400x400/1a1a1a/FFF?text=ZG",
-                socials: { twitter: "#", twitch: "#", youtube: "#" }
-            }
-        ];
-
-        // HTML oluşturucu fonksiyon
-        const teamGrid = document.getElementById('team-grid');
-        
-        teamMembers.forEach(member => {
-            const card = document.createElement('div');
-            card.className = 'bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover transition-all duration-300 flex flex-col h-full';
-            
-            card.innerHTML = `
-                <div class="h-48 bg-gray-700 overflow-hidden relative group">
-                    <img src="${member.image}" alt="${member.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span class="text-white font-heading font-bold">Takip Et</span>
-                    </div>
-                </div>
-                <div class="p-6 flex-1 flex flex-col">
-                    <h3 class="font-heading text-xl font-bold ${member.color} mb-1">${member.name}</h3>
-                    <span class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">${member.role}</span>
-                    <p class="text-gray-400 text-sm mb-6 flex-1">${member.desc}</p>
-                    
-                    <div class="flex space-x-4 mt-auto pt-4 border-t border-gray-700">
-                        <a href="${member.socials.twitch}" class="text-gray-400 hover:text-[#9146FF] transition-colors"><i class="fa-brands fa-twitch"></i></a>
-                        <a href="${member.socials.twitter}" class="text-gray-400 hover:text-[#1DA1F2] transition-colors"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="${member.socials.youtube}" class="text-gray-400 hover:text-[#FF0000] transition-colors"><i class="fa-brands fa-youtube"></i></a>
-                    </div>
-                </div>
-            `;
-            teamGrid.appendChild(card);
-        });
-    </script>
-</body>
-
-</html>
+                image
