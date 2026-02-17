@@ -130,75 +130,90 @@
         <p>&copy; 2026 Eclair Games. Tüm Hakları Saklıdır.</p>
     </footer>
 
-    <script>
-        // YENİ ÜYE EKLEMEK İÇİN SADECE BU LİSTEYE EKLEME YAPMAN YETERLİ
-        const teamMembers = [
-            {
-                name: "TheGameLih",
-                role: "Topluluk Lideri",
-                desc: "Rekabetçi ruhu ve liderlik vasıflarıyla takımın dinamosu.",
-                color: "text-red-400", // İsim Rengi
-                image: "https://placehold.co/400x400/1a1a1a/FFF?text=TG", // Profil Fotoğrafı Linki
-                socials: { twitter: "#", twitch: "#", youtube: "#" }
-            },
-            {
-                name: "Vasquara",
-                role: "Strateji & İçerik",
-                desc: "Oyun dünyasını analiz eden, strateji ustası ve yaratıcı zeka.",
-                color: "text-purple-400",
-                image: "https://placehold.co/400x400/1a1a1a/FFF?text=VQ",
-                socials: { twitter: "#", twitch: "#", youtube: "#" }
-            },
-            {
-                name: "LordStark",
-                role: "RPG Uzmanı",
-                desc: "Derin hikayelerin ve epik maceraların vazgeçilmez ismi.",
-                color: "text-blue-400",
-                image: "https://placehold.co/400x400/1a1a1a/FFF?text=LS",
-                socials: { twitter: "#", twitch: "#", youtube: "#" }
-            },
-            {
-                name: "ZelenaGreen",
-                role: "FPS Kraliçesi",
-                desc: "Refleksleri ve hızıyla rakiplerine korku salan keskin nişancı.",
-                color: "text-green-400",
-                image: "https://placehold.co/400x400/1a1a1a/FFF?text=ZG",
-                socials: { twitter: "#", twitch: "#", youtube: "#" }
-            }
-        ];
+   <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Üye Listesi
+            const teamMembers = [
+                {
+                    name: "TheGameLih",
+                    role: "Topluluk Lideri",
+                    desc: "Rekabetçi ruhu ve liderlik vasıflarıyla takımın dinamosu.",
+                    color: "text-red-400",
+                    // BURAYI DEĞİŞTİRDİK: Kendi klasöründeki resmi çağırıyoruz
+                    image: "./images/thegamelih.jpg", 
+                    socials: { twitter: "#", kick: "#", twitch: "#", youtube: "#", instagram: "#" }
+                },
+                {
+                    name: "Vasquara",
+                    role: "Strateji & İçerik",
+                    desc: "Oyun dünyasını analiz eden, strateji ustası ve yaratıcı zeka.",
+                    color: "text-purple-400",
+                    // BURAYI DEĞİŞTİRDİK
+                    image: "./images/vasquara.jpg",
+                    socials: { twitter: "#", kick: "#", twitch: "#", youtube: "#", instagram: "#" }
+                },
+                {
+                    name: "LordStark",
+                    role: "RPG Uzmanı",
+                    desc: "Derin hikayelerin ve epik maceraların vazgeçilmez ismi.",
+                    color: "text-blue-400",
+                    // BURAYI DEĞİŞTİRDİK
+                    image: "./images/lordstark.jpg",
+                    socials: { twitter: "#", kick: "#", twitch: "#", youtube: "#", instagram: "#" }
+                },
+                {
+                    name: "ZelenaGreen",
+                    role: "FPS Kraliçesi",
+                    desc: "Refleksleri ve hızıyla rakiplerine korku salan keskin nişancı.",
+                    color: "text-green-400",
+                    // BURAYI DEĞİŞTİRDİK
+                    image: "./images/zelenagreen.jpg",
+                    socials: { twitter: "#", kick: "#", twitch: "#", youtube: "#", instagram: "#" }
+                }
+            ];
 
-        // HTML oluşturucu fonksiyon
-        const teamGrid = document.getElementById('team-grid');
-        
-        teamMembers.forEach(member => {
-            const card = document.createElement('div');
-            card.className = 'bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover transition-all duration-300 flex flex-col h-full';
-            
-            card.innerHTML = `
-                <div class="h-48 bg-gray-700 overflow-hidden relative group">
-                    <img src="${member.image}" alt="${member.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <span class="text-white font-heading font-bold">Takip Et</span>
-                    </div>
-                </div>
-                <div class="p-6 flex-1 flex flex-col">
-                    <h3 class="font-heading text-xl font-bold ${member.color} mb-1">${member.name}</h3>
-                    <span class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">${member.role}</span>
-                    <p class="text-gray-400 text-sm mb-6 flex-1">${member.desc}</p>
+            const teamGrid = document.getElementById('team-grid');
+
+            if (teamGrid) {
+                teamGrid.innerHTML = '';
+
+                teamMembers.forEach(member => {
+                    const card = document.createElement('div');
+                    card.className = 'bg-gray-800 rounded-xl overflow-hidden border border-gray-700 card-hover transition-all duration-300 flex flex-col h-full';
                     
-                    <div class="flex space-x-4 mt-auto pt-4 border-t border-gray-700">
-                        <a href="${member.socials.twitch}" class="text-gray-400 hover:text-[#9146FF] transition-colors"><i class="fa-brands fa-twitch"></i></a>
-                        <a href="${member.socials.kick}" class="text-gray-400 hover:text-[#53FC18] transition-colors" title="Kick"><i class="fa-solid fa-k"></i></a>
-                        <a href="${member.socials.twitter}" class="text-gray-400 hover:text-[#1DA1F2] transition-colors"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="${member.socials.youtube}" class="text-gray-400 hover:text-[#FF0000] transition-colors"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="${member.socials.instagram}" class="text-gray-400 hover:text-[#E1306C] transition-colors" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    </div>
-                </div>
-            `;
-            teamGrid.appendChild(card);
+                    // Kick SVG Logosu
+                    const kickIcon = `<svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M2.5 0h19A2.5 2.5 0 0 1 24 2.5v19A2.5 2.5 0 0 1 21.5 24h-19A2.5 2.5 0 0 1 0 21.5v-19A2.5 2.5 0 0 1 2.5 0zm6.65 6.75h-2.4v10.5h2.4v-3.72L12.5 17.25h3.03l-4.2-4.68 3.9-5.82h-2.91l-2.49 4.11-0.69-0.96V6.75z"/></svg>`;
+
+                    card.innerHTML = `
+                        <div class="h-48 bg-gray-700 overflow-hidden relative group">
+                            <img src="${member.image}" alt="${member.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="text-white font-heading font-bold">Takip Et</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col">
+                            <h3 class="font-heading text-xl font-bold ${member.color} mb-1">${member.name}</h3>
+                            <span class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">${member.role}</span>
+                            <p class="text-gray-400 text-sm mb-6 flex-1">${member.desc}</p>
+                            
+                            <div class="flex flex-wrap items-center gap-4 mt-auto pt-4 border-t border-gray-700">
+                                <a href="${member.socials.kick}" class="text-gray-400 hover:text-eclair-kick transition-colors" title="Kick">
+                                    ${kickIcon}
+                                </a>
+                                <a href="${member.socials.twitch}" class="text-gray-400 hover:text-[#9146FF] transition-colors" title="Twitch"><i class="fa-brands fa-twitch text-xl"></i></a>
+                                <a href="${member.socials.youtube}" class="text-gray-400 hover:text-[#FF0000] transition-colors" title="YouTube"><i class="fa-brands fa-youtube text-xl"></i></a>
+                                <a href="${member.socials.instagram}" class="text-gray-400 hover:text-[#E1306C] transition-colors" title="Instagram"><i class="fa-brands fa-instagram text-xl"></i></a>
+                                <a href="${member.socials.twitter}" class="text-gray-400 hover:text-[#1DA1F2] transition-colors" title="Twitter"><i class="fa-brands fa-twitter text-xl"></i></a>
+                            </div>
+                        </div>
+                    `;
+                    teamGrid.appendChild(card);
+                });
+            }
         });
     </script>
 </body>
 </html>
+
 
 
